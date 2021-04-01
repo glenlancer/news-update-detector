@@ -13,7 +13,7 @@ def run():
     news_monitor = NewsMonitor()
     news_monitor.start()
     input_text = None
-    while input_text != '.exit':
+    while input_text != '.exit' and not config.get('stop_monitoring'):
         input_text = click.prompt('News monitor(s) are running. To exit, press ^C or type .exit')
         input_text = input_text.strip()
     news_monitor.stop()
@@ -41,7 +41,7 @@ def main(
 
     try:
         run()
-    except (EOFError, KeyboardInterrupt):
+    except:
         sys.exit(0)
 
 

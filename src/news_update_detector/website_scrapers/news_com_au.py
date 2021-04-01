@@ -126,7 +126,7 @@ class NewsComAuMonitor:
         self.console.print(new_item_table)
 
 
-    def show_updated_record(self, ext_record, new_record):
+    def show_updated_item(self, ext_record, new_record):
         updated_item_table = Table()
         updated_item_table.add_column('Status', style='bold')
         updated_item_table.add_column('Prev Update Time')
@@ -155,7 +155,7 @@ class NewsComAuMonitor:
             return None
         if ext_update_time < new_update_time:
             new_record.content = self.get_news_content(new_record.url)
-            self.show_updated_record(ext_record, new_record)
+            self.show_updated_item(ext_record, new_record)
             return new_record
         return None
 

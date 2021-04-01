@@ -3,7 +3,6 @@
 
 
 import click
-import sys
 import importlib
 import threading
 import signal
@@ -47,8 +46,6 @@ class NewsMonitor:
         click.echo('Stop monitoring. Please wait for the thread to finish.')
         for t in self.scraper_thread_pool:
             t.join()
-        if signum:
-            sys.exit(0)
 
 
     def _setup_signal_hook(self):

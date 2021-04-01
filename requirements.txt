@@ -1,0 +1,5 @@
+Click==7.0
+requests==2.22.0
+rich==10.0.1
+timestring==1.6.4
+beautifulsoup4==4.9.3
