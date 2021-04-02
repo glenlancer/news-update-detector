@@ -17,9 +17,6 @@ from ..dbs.newsComAuDb import *
 from ..news_exceptions import *
 
 
-__all__ = ['start_monitoring']
-
-
 class NewsComAuMonitor:
 
     NEWS_COM_AU_URL = 'https://www.news.com.au/'
@@ -120,7 +117,7 @@ class NewsComAuMonitor:
             'New Item',
             record.update_time if record.update_time else 'N/A',
             record.heading,
-            record.standfirst if len(record.standfirst) < 60 else record.standfirst[:60] + '...',
+            record.standfirst if len(record.standfirst) < 60 or config.get('verbose') else record.standfirst[:60] + '...',
         )
         self.console.print()
         self.console.print(new_item_table)

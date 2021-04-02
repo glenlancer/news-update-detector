@@ -26,9 +26,7 @@ def init():
 
 
 def config_logging():
-    level = logging.INFO if opts['verbose'] else logging.WARNING
     logging.basicConfig(
-        level=level,
         format='[%(asctime)s] %(levelname)-8s | %(name)s: %(msg)s ',
         datefmt='%H:%M:%S',
     )

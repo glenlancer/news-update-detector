@@ -22,7 +22,8 @@ class NewsMonitor:
         return [v for k, v in config.get('news_sources_map').items() if k in config.get('news_sources')]
 
 
-    def _spawn_scraper_thread(self, scraper):
+    @staticmethod
+    def _spawn_scraper_thread(scraper):
         scraper_module = importlib.import_module('.website_scrapers.' + scraper, __package__)
         scraper_module.start_monitoring()
 
@@ -32,7 +33,7 @@ class NewsMonitor:
 
         for scraper in website_scrapers:
             t = threading.Thread(
-                target=self._spawn_scraper_thread,
+                target=NewsMonitor._spawn_scraper_thread,
                 args=(scraper,)
             )
             t.setDaemon(False)
