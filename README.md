@@ -45,11 +45,11 @@ When the program reads an item with an existing heading stored in the databse, i
 
 > I want to put a screenshot here to show what do updates look like, but it seems [news.com.au](https://www.news.com.au/) doesn't have updates during the holiday period.
 
-When the program starts it will inform the user how to quit, i.e. Ctrl-C or type `.exit` (Copied from nodejs prompt)
+When the program starts it will inform the user how to quit, i.e. `Ctrl-C` or type `.exit` (Copied from nodejs prompt)
 
 ![](./static/prompt.png)
 
-When type `Ctrl-C` or `.exit` the program will set stop flag and exit, but the thread which scans the website will quit when finishing current round of scanning.
+When type `Ctrl-C` or `.exit` the program will set the stop flag and exit, but the thread which scans the website will quit when finishing current round of scanning.
 
 ![](./static/stop.png)
 
