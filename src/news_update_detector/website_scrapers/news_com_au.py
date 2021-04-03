@@ -81,7 +81,7 @@ class NewsComAuMonitor:
         return news_records
 
 
-    def get_news_content(self, url):
+    def _get_news_content(self, url):
         if not url:
             return ''
         page_bs = self._get_bs_obj(url)
@@ -144,14 +144,14 @@ class NewsComAuMonitor:
         self.console.print('\n'.join(content_diff))
 
 
-    def analyse_updated_record(self, ext_record, new_record):
+    def _analyse_updated_record(self, ext_record, new_record):
         try:
             ext_update_time = timestring.Date(ext_record.update_time)
             new_update_time = timestring.Date(new_record.update_time)
         except:
             return None
         if ext_update_time < new_update_time:
-            new_record.content = self.get_news_content(new_record.url)
+            new_record.content = self._get_news_content(new_record.url)
             self.show_updated_item(ext_record, new_record)
             return new_record
         return None
@@ -168,13 +168,13 @@ class NewsComAuMonitor:
                 prev_record = record
             ext_record = self.db.select_news_via_heading(record.heading)
             if ext_record is None:
-                record.content = self.get_news_content(record.url)
+                record.content = self._get_news_content(record.url)
                 added_news_records.append(record)
                 self.show_new_item(record)
             else:
                 if not record.url.startswith(NewsComAuMonitor.NEWS_COM_AU_URL):
                     continue
-                updated_record = self.analyse_updated_record(ext_record, record)
+                updated_record = self._analyse_updated_record(ext_record, record)
                 if updated_record:
                     updated_news_records.append(updated_record)
         if added_news_records:

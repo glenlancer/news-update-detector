@@ -1,6 +1,6 @@
 # test cases for news_monitor.py
 
-from news_update_detector.website_scrapers import news_com_au
+
 import pytest
 from ..news_monitor import NewsMonitor
 from .. import config
@@ -35,11 +35,10 @@ def test__spawn_scraper_thread(mocker, monkeypatch):
     assert spy_start_monitoring.call_count == 1
 
 
-def test_start(mocker, monkeypatch, check_args):
+def test_start(monkeypatch, check_args):
     news_monitor = NewsMonitor()
     monkeypatch.setattr(NewsMonitor, '_get_website_scrapers', lambda: ['news_com_au'])
     monkeypatch.setattr(NewsMonitor, '_spawn_scraper_thread', check_args)
     news_monitor.start()
     news_monitor.stop()
     assert check_args.args == ['news_com_au']
-

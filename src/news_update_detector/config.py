@@ -21,7 +21,7 @@ def init():
             'referer': 'https://www.google.com',
         },
         'stop_monitoring': False,
-        'interval': 2,
+        'interval': 5,
     }
 
 

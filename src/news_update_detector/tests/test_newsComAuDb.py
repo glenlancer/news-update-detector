@@ -9,7 +9,7 @@ def test_NewsComAuDb():
     NewsComAuDb.DB_FILE = TEST_DB_FILE
     
     news_com_au_db = NewsComAuDb()
-    assert os.path.isfile('test_news.db') == True
+    assert os.path.isfile(TEST_DB_FILE) == True
 
     news_com_au_db.create_table(NewsComAuDb.SQL_CREATE_NEWS_TABLE)
     news_record = NewsComAuRecord()
