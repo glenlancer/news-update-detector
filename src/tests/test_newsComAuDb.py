@@ -1,7 +1,7 @@
 # test cases for newsComAuDb.py
 
 import os
-from ..dbs.newsComAuDb import *
+from news_update_detector.dbs.newsComAuDb import *
 
 
 def test_NewsComAuDb():

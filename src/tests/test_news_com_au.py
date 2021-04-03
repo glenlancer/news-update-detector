@@ -1,10 +1,10 @@
 # test cases for news_com_au.py
 
 
-from ..news_api import NewsApi
-from .. import config
-from ..website_scrapers.news_com_au import *
-from ..dbs.newsComAuDb import NewsComAuRecord
+from news_update_detector.news_api import NewsApi
+from news_update_detector import config
+from news_update_detector.website_scrapers.news_com_au import *
+from news_update_detector.dbs.newsComAuDb import NewsComAuRecord
 
 
 config.init()
@@ -35,7 +35,6 @@ def test__parse_news_record(monkeypatch):
     all_story_blocks = news_com_au_monitor._collect_all_story_blocks(page_bs)
     all_news_records = news_com_au_monitor._parse_news_records(all_story_blocks)
     assert len(all_news_records) == 68
-    from ..dbs.newsComAuDb import NewsComAuRecord
     assert isinstance(all_news_records[0], NewsComAuRecord) == True
 
 

@@ -2,8 +2,8 @@
 
 
 from click.testing import CliRunner
-from .. import __main__
-from .. import config
+from news_update_detector import __main__
+from news_update_detector import config
 
 
 def test_main(monkeypatch):

@@ -3,9 +3,9 @@
 
 import requests
 import pytest
-from ..news_api import NewsApi
-from ..news_exceptions import *
-from .. import config
+from news_update_detector.news_api import NewsApi
+from news_update_detector.news_exceptions import *
+from news_update_detector import config
 
 
 def test_NewsApi_request(monkeypatch):

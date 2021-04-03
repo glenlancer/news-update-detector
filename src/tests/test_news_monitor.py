@@ -2,8 +2,9 @@
 
 
 import pytest
-from ..news_monitor import NewsMonitor
-from .. import config
+from news_update_detector.news_monitor import NewsMonitor
+from news_update_detector import config
+from news_update_detector.website_scrapers import news_com_au
 
 
 @pytest.fixture
@@ -27,7 +28,6 @@ def test__get_website_scrapers():
 
 
 def test__spawn_scraper_thread(mocker, monkeypatch):
-    from ..website_scrapers import news_com_au
     monkeypatch.setattr(news_com_au, 'start_monitoring', lambda: None)
     spy_start_monitoring = mocker.spy(news_com_au, 'start_monitoring')
     news_monitor = NewsMonitor()

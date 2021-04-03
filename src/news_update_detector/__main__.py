@@ -22,7 +22,7 @@ def run():
 @click.command()
 @click.version_option(version=__version__)
 @click.option('-s', '--sources', help='Set websites to monitor, e.g., news or "news other_sources" (news for news.com.au, more to be added)')
-@click.option('-i', '--interval', default=7, type=int, help='Set interval of monitorings, in second(s)')
+@click.option('-i', '--interval', default=5, type=int, help='Set interval of monitorings, in second(s)')
 @click.option('-v', '--verbose', default=False, is_flag=True, help='Show more details.')
 def main(
     sources,
