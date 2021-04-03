@@ -13,7 +13,7 @@ def run():
     news_monitor = NewsMonitor()
     news_monitor.start()
     input_text = None
-    while input_text != '.exit' and not config.get('stop_monitoring'):
+    while input_text != '.exit':
         input_text = click.prompt('News monitor(s) are running. To exit, press ^C or type .exit')
         input_text = input_text.strip()
     news_monitor.stop()
