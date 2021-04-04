@@ -41,9 +41,9 @@ When the program detects a new item was added to the front page, it will write a
 
 ![](./static/new_item.png)
 
-When the program reads an item with an existing heading stored in the databse, it will compare the update times of the 2 records and try to show differences via `difflib` if necessary. Some updates do not seem to have differences in the command line, that's because `difflib` only try to compare the text collected by `_get_news_content`.
+When the program reads an item with an existing heading stored in the databse, it will compare the update times of the 2 records and try to show differences via `difflib` if necessary. Some updates do not seem to have differences in the command line, that's because `difflib` only try to compare the text collected by `_get_news_content`. The new version of the article will be updated to the databse.
 
-> I want to put a screenshot here to show what do updates look like, but it seems [news.com.au](https://www.news.com.au/) doesn't have updates during the holiday period.
+![](./static/update.png)
 
 When the program starts it will inform the user how to quit, i.e. `Ctrl-C` or type `.exit` (Copied from nodejs prompt)
 
