@@ -43,7 +43,7 @@ When the program detects a new item was added to the front page, it will write a
 
 When the program reads an item with an existing heading stored in the databse, it will compare the update times of the 2 records and try to show differences via `difflib` if necessary. Some updates do not seem to have differences in the command line, that's because `difflib` only try to compare the text collected by `_get_news_content`. The new version of the article will be updated to the databse.
 
-![](./static/update.png)
+> remove this update screenshot, I'll replace it with another one.
 
 When the program starts it will inform the user how to quit, i.e. `Ctrl-C` or type `.exit` (Copied from nodejs prompt)
 
